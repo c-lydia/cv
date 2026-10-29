@@ -21,3 +21,6 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+# Local Flutter SDK and Pages staging
+.flutter-sdk/
+_site/

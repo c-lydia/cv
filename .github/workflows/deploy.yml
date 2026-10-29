@@ -2,8 +2,7 @@ name: Deploy CV to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -12,7 +11,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
 
 jobs:
@@ -22,8 +21,34 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout code
+      - name: Checkout CV
         uses: actions/checkout@v4
+
+      - name: Checkout pinned Flutter SDK
+        uses: actions/checkout@v4
+        with:
+          repository: flutter/flutter
+          ref: 3.47.6
+          path: .flutter-sdk
+          persist-credentials: false
+
+      - name: Build and test the interactive CV
+        working-directory: interactive-src
+        run: |
+          export PATH="$GITHUB_WORKSPACE/.flutter-sdk/bin:$PATH"
+          test "$(git -C "$GITHUB_WORKSPACE/.flutter-sdk" rev-parse HEAD)" = "5fc346839b5d0eef006ed8404392afb4dfae428d"
+          flutter config --no-analytics
+          flutter pub get --enforce-lockfile
+          flutter analyze --no-pub
+          flutter test --no-pub
+          flutter build web --release --no-pub --no-web-resources-cdn --base-href /cv/interactive/
+
+      - name: Stage both CV versions
+        run: |
+          mkdir -p _site/interactive
+          cp index.html cv.html cv.js screen.css print.css Chheng-Lydiya-CV.pdf UbuntuSans.ttf FONT-LICENSE.txt _site/
+          cp -R interactive-src/build/web/. _site/interactive/
+          touch _site/.nojekyll
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -31,7 +56,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: _site
 
       - name: Deploy to GitHub Pages
         id: deployment

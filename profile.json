@@ -1,0 +1,88 @@
+{
+  "name": "Chheng Lydiya",
+  "headline": "Embedded Systems · Robotics · Software Development",
+  "location": "Phnom Penh, Cambodia",
+  "email": "chhenglydiacl@gmail.com",
+  "github": "https://github.com/c-lydia",
+  "portfolio": "https://chheng-lydiya-portfolio.vercel.app",
+  "summary": "Network & Telecommunication Engineering student at the Institute of Technology of Cambodia, expected to graduate in 2028. Builds embedded firmware, robot control software, and developer tools, connecting physical systems with the interfaces and infrastructure used to operate them.",
+  "education": {
+    "title": "Network & Telecommunication Engineering",
+    "organization": "Institute of Technology of Cambodia",
+    "period": "Expected graduation: 2028",
+    "detail": "Phnom Penh, Cambodia"
+  },
+  "experience": [
+    {
+      "title": "Software and AI Department · Control System Track",
+      "organization": "DCLab / Robocon",
+      "period": "October 2024–present",
+      "bullets": [
+        "Contributes to robot control systems: semi-autonomous control for an omnidirectional robot and development of the team's current swerve platform.",
+        "Built an Android navigation application as a learning project.",
+        "Trains new members in Python, development environments (venv, Docker, and basic Ubuntu), and ROS 2 through the 2026–2027 intensive course.",
+        "Teaches microcontroller programming and control-system fundamentals."
+      ]
+    },
+    {
+      "title": "Internship · Jetson Infrastructure & AI Integration",
+      "organization": "SAAT R&D Center",
+      "period": "",
+      "bullets": [
+        "Built infrastructure connecting IP cameras and AI web software on NVIDIA Jetson, including model extraction and GPU processing pipelines.",
+        "Adapted the software stack to vendor firmware, upgraded Jetson firmware, and tested the integrated camera and AI pipeline.",
+        "Built middleware and adapted the web software to integrate with it."
+      ]
+    }
+  ],
+  "skills": [
+    {"title": "Programming", "items": "C, C++, Python, Java, JavaScript, TypeScript, Dart, Bash, SQL"},
+    {"title": "Embedded & robotics", "items": "ESP32, STM32, ESP-IDF, FreeRTOS, ROS 2, Gazebo, PlatformIO, VESC, KiCad"},
+    {"title": "Networking & edge AI", "items": "TCP/IP, UDP, CAN, MQTT, CoAP, OpenCV, CUDA, GStreamer, Jetson"},
+    {"title": "Applications & tooling", "items": "Flutter, React Native, FastAPI, Firebase, Git, Docker, CMake, GDB, Linux, Neovim"}
+  ],
+  "projects": [
+    {
+      "title": "ByteLab",
+      "subtitle": "Firmware development workspace",
+      "url": "https://github.com/c-lydia/ByteLab",
+      "bullets": ["Develops a Flutter workspace combining source editing, project-aware SDK documentation, and serial tooling. The browser edition supports local project copies and ZIP export; Linux adds native build and flash integration."]
+    },
+    {
+      "title": "SmartDB",
+      "subtitle": "Connected electrical-monitoring prototype",
+      "url": "https://github.com/c-lydia/SmartDB",
+      "bullets": ["Contributes embedded firmware, KiCad hardware, ingestion/backend APIs, and integration documentation, including ESP32-S3 firmware, a Firebase HTTP API, and a CoAP gateway. The user-facing dashboard is owned by the frontend team; physical bench validation is pending."]
+    },
+    {
+      "title": "Underlight",
+      "subtitle": "Linux desktop & development environment",
+      "url": "https://github.com/c-lydia/underlight",
+      "bullets": ["Builds and maintains a Hyprland workbench for Ubuntu and EndeavourOS, integrating desktop widgets, shell helpers, persistent ROS 2/SSH sessions, diagnostics, and documented installation/rollback workflows."]
+    },
+    {
+      "title": "ESP-ROS2",
+      "subtitle": "Embedded robotics & teaching · since November 2025",
+      "url": "https://github.com/c-lydia/ESP-ROS2",
+      "bullets": ["Rebuilds a personal robot with new motors as a hands-on platform for juniors to learn microcontrollers and electronics. The teaching rebuild is in progress; micro-ROS is a possible later extension."]
+    },
+    {
+      "title": "Neovim Config",
+      "subtitle": "Multi-stack development workbench",
+      "url": "https://github.com/c-lydia/neovim_config",
+      "bullets": ["Maintains a multi-stack editing environment supporting firmware, robotics, and software-development workflows."]
+    }
+  ],
+  "community": [
+    "WE DARE DO Hackathon — technical mentor and judge",
+    "Navathon — team lead",
+    "Huawei ICT Competition — national-round participant",
+    "Two STEM contests at New Life School"
+  ],
+  "languages": "Khmer (native) · English (fluent) · French (intermediate)",
+  "sources": {
+    "reviewed": "2026-10-29",
+    "content": ["lib/features/about/about_page.dart", "lib/features/about/widgets/toolbox_section.dart", "lib/features/experience/dclab_section.dart", "lib/features/experience/saat_section.dart", "lib/features/projects/data/project_case_studies.dart"],
+    "contact": "Email retained from the existing public c-lydia/cv CV. No internship dates, employment titles, proficiency scores, or achievement metrics have been invented."
+  }
+}
